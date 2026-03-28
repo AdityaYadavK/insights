@@ -28,6 +28,7 @@ app.get('/', (req, res) => {
     console.log('verified')
 })
 
+console.log("check")
 
 const server = app.listen(port, host, () => {
     console.log(`listening on http://${host}:${port}`);
