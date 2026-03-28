@@ -26,7 +26,7 @@ export default router.get('/:username', middleware, async(req, res) => {
         })
         if(!user) return res.json({ msg : 'username not found' })
 
-        res.json({ user })
+        res.json( user )
 
     }catch(e){
         console.error(e);

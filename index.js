@@ -4,6 +4,9 @@ import register from './routes/auth/register.js'
 import login from './routes/auth/login.js'
 import logout from './routes/auth/logout.js'
 import search from './routes/users/search.js'
+import following from './routes/users/following.js'
+import followers from './routes/users/followers.js'
+import follow from './routes/users/follow.js'
 
 const app = express();
 const host = process.env.HOST || '127.0.0.1';
@@ -15,7 +18,10 @@ app.use(cp())
 app.use('/api/v1/auth/register', register);
 app.use('/api/v1/auth/login', login)
 app.use('/api/v1/auth/logout', logout)
-app.use('/api/v1/user', search)
+app.use('/api/v1/user/search', search)
+app.use('/api/v1/user/following', following)
+app.use('/api/v1/user/followers', followers)
+app.use('/api/v1/user/follow', follow)
 
 app.get('/', (req, res) => {
     res.json({ msg : 'health verified' })
