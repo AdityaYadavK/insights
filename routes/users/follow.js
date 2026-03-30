@@ -11,7 +11,7 @@ router.post('/:username', middleware, async(req, res) => {
         const target = await prisma.user.findUnique({
             where : { username : username }
         })
-        if(!target) return res.json({ msg : 'user does not exists' })
+        if(!target) return res.json({ msg : 'user does not exist' })
 
         if(req.user.id == target.id){
             return res.json({ msg : 'cant follow self' })
